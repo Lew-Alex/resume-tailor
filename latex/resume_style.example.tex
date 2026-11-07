@@ -1,0 +1,59 @@
+% Resume format used by Resume Tailor. Your real copy lives in data/resume_style.tex (git-ignored); edit the header there.
+% Uses fontspec, so compile with XeLaTeX (Tectonic) or set Overleaf's compiler to XeLaTeX.
+\usepackage[letterpaper,margin=0.4in]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf,Ligatures={NoCommon,NoDiscretionary}]
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{titlesec}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=0.36in,label=\textbullet,itemsep=1.05pt,topsep=0.05pt,parsep=0.05pt,partopsep=0.05pt}
+\titleformat{\section}{\normalfont\fontsize{13.055}{15.1}\selectfont\scshape}{}{0pt}{}
+\titlespacing*{\section}{0pt}{2.05pt}{2.05pt}
+
+\newcommand{\resumeHeader}{%
+  \begingroup\centering
+    {\fontsize{25.787}{30.0}\selectfont\bfseries Your Name}\par
+    \vspace{1pt}
+    {\fontsize{8.966}{10.5}\selectfont
+      \href{mailto:you@example.com}{\underline{you@example.com}}
+      \;|\; 555-0100
+      \;|\; \href{https://linkedin.com/in/your-name}{\underline{linkedin.com/in/your-name}}
+      \;|\; \href{https://example.com}{\underline{example.com}}
+      \;|\; \href{https://github.com/your-name}{\underline{github.com/your-name}}}
+  \par\endgroup\vspace{3pt}
+  \vspace{-2pt}
+}
+
+\newcommand{\skillline}[2]{\textbf{#1} #2\par}
+
+\newcommand{\roleheading}[2]{%
+  {\fontsize{12.009}{13.3}\selectfont\bfseries #1}\hfill
+  {\fontsize{12.009}{13.3}\selectfont #2}\par
+}
+
+\newcommand{\organization}[1]{%
+  {\fontsize{11.063}{12.3}\selectfont\itshape #1}\par
+}
+
+\newcommand{\projectheading}[3]{%
+  {\fontsize{11.063}{12.3}\selectfont\bfseries #1}\hspace{0.08in}
+  {\fontsize{10.066}{11.3}\selectfont\itshape #2}\hfill
+  {\fontsize{12.009}{13.3}\selectfont #3}\par
+}
+
+\newcommand{\educationheading}[2]{%
+  {\fontsize{12.009}{13.3}\selectfont\bfseries #1}\hfill
+  {\fontsize{12.009}{13.3}\selectfont #2}\par
+}
+
+\newenvironment{resumeBullets}{%
+  \begin{itemize}\raggedright\fontsize{11.063}{13.15}\selectfont
+}{\end{itemize}}
+
+\newcommand{\resumeRule}{\vspace{-1pt}\hrule height 0.4pt\vspace{4.05pt}}
