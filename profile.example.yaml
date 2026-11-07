@@ -1,0 +1,109 @@
+# Example master profile. On first run this is copied to data/profile.yaml
+# (which is git-ignored, so your real data never gets committed).
+# Put EVERYTHING here; the tailoring step decides what goes on each resume.
+#
+# Bullet fields:
+#   text            the bullet as it would appear on the resume (**bold** allowed)
+#   tags            free-form keywords that help matching
+#   evidence        implemented | experiment | planned   (planned never goes on a tailored resume)
+#   status          approved | draft                     (drafts never go on a tailored resume)
+#   groups          bullets sharing a group are alternative wordings; a resume uses at most one
+#   metrics_needed  true if the bullet would be stronger with a number you haven't given yet
+
+basics:
+  name: Jordan Example
+  email: jordan@example.com
+  phone: 555-0100
+  location: Springfield
+  links:
+    - label: github.com/jordan-example
+      url: https://github.com/jordan-example
+    - label: linkedin.com/in/jordan-example
+      url: https://linkedin.com/in/jordan-example
+
+education:
+  - id: uni
+    school: Example University
+    degree: BSc Computer Engineering
+    location: Springfield
+    start: Sep 2024
+    end: May 2028
+    bullets:
+      - id: uni-courses
+        text: "Relevant courses: Data Structures, Operating Systems, Digital Logic, Signals and Systems"
+        tags: [coursework]
+
+experience:
+  - id: lab
+    org: Example University Systems Lab
+    role: Undergraduate Research Assistant
+    location: Springfield
+    start: May 2025
+    end: Present
+    bullets:
+      - id: lab-1
+        text: Built a **Python** data pipeline that parses sensor logs and generates nightly reports for the lab
+        tags: [python, data, automation]
+        evidence: implemented
+        groups: [lab-pipeline]
+      - id: lab-1-short
+        text: Automated nightly sensor-log reports with a **Python** pipeline
+        tags: [python, automation]
+        evidence: implemented
+        groups: [lab-pipeline]
+      - id: lab-2
+        text: Benchmarked two message-queue designs for the lab's test rig and documented the trade-offs
+        tags: [benchmarking, c++, systems]
+        evidence: experiment
+        metrics_needed: true
+      - id: lab-3
+        text: Port the data pipeline to run in **Docker** on the lab server
+        tags: [docker, devops]
+        evidence: planned
+
+  - id: cafe
+    org: Campus Cafe
+    role: Shift Lead
+    location: Springfield
+    start: Sep 2023
+    end: Apr 2025
+    bullets:
+      - id: cafe-1
+        text: Trained new staff and scheduled shifts for a team of eight
+        tags: [leadership, communication]
+
+projects:
+  - id: weather
+    name: Weather Station
+    tech: C, ESP32, MQTT
+    start: 2025
+    bullets:
+      - id: weather-1
+        text: Wrote **C** firmware for an **ESP32** weather station that publishes readings over **MQTT**
+        tags: [embedded, c, iot]
+        evidence: implemented
+
+  - id: budget
+    name: Budget Tracker
+    tech: TypeScript, React, SQLite
+    start: 2024
+    bullets:
+      - id: budget-1
+        text: Built a **React** budgeting app with category charts and CSV import
+        tags: [web, typescript, react]
+      - id: budget-2
+        text: Drafted bullet waiting for review
+        tags: [web]
+        status: draft
+
+skills:
+  - { id: sk-c, name: C, category: Languages }
+  - { id: sk-cpp, name: C++, category: Languages }
+  - { id: sk-py, name: Python, category: Languages }
+  - { id: sk-ts, name: TypeScript, category: Languages }
+  - { id: sk-react, name: React, category: Frameworks }
+  - { id: sk-esp32, name: ESP32, category: Embedded }
+  - { id: sk-mqtt, name: MQTT, category: Embedded }
+  - { id: sk-docker, name: Docker, category: Tools }
+  - { id: sk-git, name: Git, category: Tools }
+  - { id: sk-sqlite, name: SQLite, category: Tools }
