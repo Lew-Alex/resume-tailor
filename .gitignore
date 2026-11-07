@@ -1,0 +1,10 @@
+# your personal data stays local
+data/
+
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# local editor/agent config
+.claude/
